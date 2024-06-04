@@ -1,0 +1,278 @@
+CREATE TABLE IF NOT EXISTS nba_data.games
+(
+    season_id bigint,
+    team_id_home bigint,
+    team_abbreviation_home text COLLATE pg_catalog."default",
+    team_name_home text COLLATE pg_catalog."default",
+    game_id bigint,
+    game_date text COLLATE pg_catalog."default",
+    matchup_home text COLLATE pg_catalog."default",
+    wl_home text COLLATE pg_catalog."default",
+    min bigint,
+    fgm_home double precision,
+    fga_home double precision,
+    fg_pct_home double precision,
+    fg3m_home double precision,
+    fg3a_home double precision,
+    fg3_pct_home double precision,
+    ftm_home double precision,
+    fta_home double precision,
+    ft_pct_home double precision,
+    oreb_home double precision,
+    dreb_home double precision,
+    reb_home double precision,
+    ast_home double precision,
+    stl_home double precision,
+    blk_home double precision,
+    tov_home double precision,
+    pf_home double precision,
+    pts_home double precision,
+    plus_minus_home bigint,
+    video_available_home bigint,
+    team_id_away bigint,
+    team_abbreviation_away text COLLATE pg_catalog."default",
+    team_name_away text COLLATE pg_catalog."default",
+    matchup_away text COLLATE pg_catalog."default",
+    wl_away text COLLATE pg_catalog."default",
+    fgm_away double precision,
+    fga_away double precision,
+    fg_pct_away double precision,
+    fg3m_away double precision,
+    fg3a_away double precision,
+    fg3_pct_away double precision,
+    ftm_away double precision,
+    fta_away double precision,
+    ft_pct_away double precision,
+    oreb_away double precision,
+    dreb_away double precision,
+    reb_away double precision,
+    ast_away double precision,
+    stl_away double precision,
+    blk_away double precision,
+    tov_away double precision,
+    pf_away double precision,
+    pts_away double precision,
+    plus_minus_away bigint,
+    video_available_away bigint,
+    season_type text COLLATE pg_catalog."default"
+);
+
+CREATE TABLE IF NOT EXISTS nba_data.line_score
+(
+    game_date_est text COLLATE pg_catalog."default",
+    game_sequence double precision,
+    game_id bigint,
+    team_id_home bigint,
+    team_abbreviation_home text COLLATE pg_catalog."default",
+    team_city_name_home text COLLATE pg_catalog."default",
+    team_nickname_home text COLLATE pg_catalog."default",
+    team_wins_losses_home text COLLATE pg_catalog."default",
+    pts_qtr1_home double precision,
+    pts_qtr2_home double precision,
+    pts_qtr3_home double precision,
+    pts_qtr4_home double precision,
+    pts_ot1_home double precision,
+    pts_ot2_home double precision,
+    pts_ot3_home double precision,
+    pts_ot4_home double precision,
+    pts_ot5_home double precision,
+    pts_ot6_home double precision,
+    pts_ot7_home double precision,
+    pts_ot8_home double precision,
+    pts_ot9_home double precision,
+    pts_ot10_home double precision,
+    pts_home double precision,
+    team_id_away bigint,
+    team_abbreviation_away text COLLATE pg_catalog."default",
+    team_city_name_away text COLLATE pg_catalog."default",
+    team_nickname_away text COLLATE pg_catalog."default",
+    team_wins_losses_away text COLLATE pg_catalog."default",
+    pts_qtr1_away double precision,
+    pts_qtr2_away double precision,
+    pts_qtr3_away double precision,
+    pts_qtr4_away double precision,
+    pts_ot1_away double precision,
+    pts_ot2_away double precision,
+    pts_ot3_away double precision,
+    pts_ot4_away double precision,
+    pts_ot5_away double precision,
+    pts_ot6_away double precision,
+    pts_ot7_away double precision,
+    pts_ot8_away double precision,
+    pts_ot9_away double precision,
+    pts_ot10_away double precision,
+    pts_away double precision
+);
+
+CREATE TABLE IF NOT EXISTS nba_data.play_by_play
+(
+    game_id bigint,
+    eventnum bigint,
+    eventmsgtype bigint,
+    eventmsgactiontype bigint,
+    period bigint,
+    wctimestring text COLLATE pg_catalog."default",
+    pctimestring text COLLATE pg_catalog."default",
+    homedescription text COLLATE pg_catalog."default",
+    neutraldescription text COLLATE pg_catalog."default",
+    visitordescription text COLLATE pg_catalog."default",
+    score text COLLATE pg_catalog."default",
+    scoremargin text COLLATE pg_catalog."default",
+    person1type double precision,
+    player1_id bigint,
+    player1_name text COLLATE pg_catalog."default",
+    player1_team_id double precision,
+    player1_team_city text COLLATE pg_catalog."default",
+    player1_team_nickname text COLLATE pg_catalog."default",
+    player1_team_abbreviation text COLLATE pg_catalog."default",
+    person2type double precision,
+    player2_id bigint,
+    player2_name text COLLATE pg_catalog."default",
+    player2_team_id double precision,
+    player2_team_city text COLLATE pg_catalog."default",
+    player2_team_nickname text COLLATE pg_catalog."default",
+    player2_team_abbreviation text COLLATE pg_catalog."default",
+    person3type double precision,
+    player3_id bigint,
+    player3_name text COLLATE pg_catalog."default",
+    player3_team_id double precision,
+    player3_team_city text COLLATE pg_catalog."default",
+    player3_team_nickname text COLLATE pg_catalog."default",
+    player3_team_abbreviation text COLLATE pg_catalog."default",
+    video_available_flag bigint
+);
+
+CREATE TABLE IF NOT EXISTS nba_data.player_seasons
+(
+    "Rk" bigint,
+    "Player" text COLLATE pg_catalog."default",
+    "Pos" text COLLATE pg_catalog."default",
+    "Age" bigint,
+    "Tm" text COLLATE pg_catalog."default",
+    "G" bigint,
+    "GS" bigint,
+    "MP" double precision,
+    "FG" double precision,
+    "FGA" double precision,
+    "FG%" double precision,
+    "3P" double precision,
+    "3PA" double precision,
+    "3P%" double precision,
+    "2P" double precision,
+    "2PA" double precision,
+    "2P%" double precision,
+    "eFG%" double precision,
+    "FT" double precision,
+    "FTA" double precision,
+    "FT%" double precision,
+    "ORB" double precision,
+    "DRB" double precision,
+    "TRB" double precision,
+    "AST" double precision,
+    "STL" double precision,
+    "BLK" double precision,
+    "TOV" double precision,
+    "PF" double precision,
+    "PTS" double precision,
+    "Year" text COLLATE pg_catalog."default"
+);
+
+CREATE TABLE IF NOT EXISTS nba_data.playoff_stats
+(
+    season bigint,
+    player text COLLATE pg_catalog."default",
+    pos text COLLATE pg_catalog."default",
+    age bigint,
+    team_id text COLLATE pg_catalog."default",
+    g bigint,
+    gs double precision,
+    mp_per_g double precision,
+    fg_per_g double precision,
+    fga_per_g double precision,
+    fg_pct double precision,
+    fg3_per_g double precision,
+    fg3a_per_g double precision,
+    fg3_pct double precision,
+    fg2_per_g double precision,
+    fg2a_per_g double precision,
+    fg2_pct double precision,
+    efg_pct double precision,
+    ft_per_g double precision,
+    fta_per_g double precision,
+    ft_pct double precision,
+    orb_per_g double precision,
+    drb_per_g double precision,
+    trb_per_g double precision,
+    ast_per_g double precision,
+    stl_per_g double precision,
+    blk_per_g double precision,
+    tov_per_g double precision,
+    pf_per_g double precision,
+    pts_per_g double precision,
+    ast_pct double precision,
+    blk_pct double precision,
+    bpm double precision,
+    dbpm double precision,
+    drb_pct double precision,
+    dws double precision,
+    fg3a_per_fga_pct double precision,
+    fta_per_fga_pct double precision,
+    mp double precision,
+    obpm double precision,
+    orb_pct double precision,
+    ows double precision,
+    per double precision,
+    stl_pct double precision,
+    tov_pct double precision,
+    trb_pct double precision,
+    ts_pct double precision,
+    usg_pct double precision,
+    vorp double precision,
+    ws double precision,
+    ws_per_48 double precision
+);
+
+CREATE OR REPLACE VIEW nba_data.streaks_of_twenty
+ AS
+ WITH lagged AS (
+         SELECT player_seasons."Player" AS player_name,
+            "right"(player_seasons."Year", 4) AS season,
+            player_seasons."PTS" AS pts,
+            lag(player_seasons."PTS", 1) OVER (PARTITION BY player_seasons."Player" ORDER BY ("right"(player_seasons."Year", 4))) AS pts_last_season
+           FROM nba_data.player_seasons
+          ORDER BY ("right"(player_seasons."Year", 4))
+        ), did_change AS (
+         SELECT lagged.player_name,
+            lagged.season,
+            lagged.pts,
+            lagged.pts_last_season,
+                CASE
+                    WHEN lagged.pts >= 20::double precision AND lagged.pts_last_season >= 20::double precision THEN 0
+                    ELSE 1
+                END AS pts_stayed_above_20
+           FROM lagged
+        ), identified AS (
+         SELECT did_change.player_name,
+            did_change.season,
+            did_change.pts,
+            did_change.pts_last_season,
+            did_change.pts_stayed_above_20,
+            sum(did_change.pts_stayed_above_20) OVER (PARTITION BY did_change.player_name ORDER BY did_change.season) AS streak_identifier
+           FROM did_change
+        )
+ SELECT identified.player_name,
+    identified.streak_identifier,
+    count(
+        CASE
+            WHEN identified.pts >= 20::double precision THEN 1
+            ELSE NULL::integer
+        END) AS number_of_consecutive_seasons
+   FROM identified
+  GROUP BY identified.player_name, identified.streak_identifier
+  ORDER BY (count(
+        CASE
+            WHEN identified.pts >= 20::double precision THEN 1
+            ELSE NULL::integer
+        END)) DESC;
+
+
